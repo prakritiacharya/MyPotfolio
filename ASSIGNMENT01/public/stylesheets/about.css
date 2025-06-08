@@ -1,0 +1,169 @@
+.about-me-section {
+    background-color: var(--section-bg-dark); /* Darker background for the section */
+    padding: 50px 0; /* Vertical padding for the whole section */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Align items vertically in the center */
+    min-height: calc(100vh - 60px); /* Fill remaining viewport height, accounting for navbar */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    border-top: 1px solid var(--border-color); /* Matches the border from the image */
+    border-bottom: 1px solid var(--border-color); /* Matches the border from the image */
+}
+
+.about-image-container {
+    width: 450px; /* Fixed width for the image container, adjust as needed */
+    height: 600px; /* Fixed height for the image container, adjust as needed */
+    overflow: hidden; /* Ensures the image is clipped to the container */
+    position: relative; /* For positioning purposes */
+    padding: 20px; /* Padding inside the container to create inner border effect */
+    background-color: var(--purple); /* Inner background color matching the image's inner border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow for the image container */
+    margin: 20px; /* Margin to separate from content box */
+    display: flex; /* To center the image if needed */
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; /* Slight roundness */
+}
+
+.about-profile-pic {
+    width: 100%; /* Make image fill its container */
+    height: 100%; /* Make image fill its container */
+    object-fit: cover; /* Crop image to fit container */
+    display: block; /* Remove extra space below image */
+}
+
+.about-content-container {
+    background-color: var(--content-box-bg); /* Light background for content */
+    color: var(--content-text-color); /* Dark text for readability */
+    padding: 40px;
+    width: 600px; /* Fixed width for the content box, adjust as needed */
+    min-height: 600px; /* Match height of image container for alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    margin: 20px; /* Margin to separate from image container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow for the content container */
+    border-radius: 5px; /* Slight roundness */
+}
+
+.about-content-container h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: var(--content-text-color);
+    font-weight: 700;
+}
+
+.about-content-container p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+/* --- Work Experience Section --- */
+.work-experience-section {
+    background-color: var(--content-box-bg); /* Use the light background for consistency */
+    color: var(--content-text-color);
+    padding: 50px 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.work-experience-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--content-text-color);
+}
+
+.experience-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: #fff; /* White background for each item */
+    color: var(--content-text-color);
+}
+
+.experience-details h3 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.experience-details .company,
+.experience-details .duration {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.job-responsibilities {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+.job-responsibilities li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* --- Certificates Section --- */
+.certificates-section {
+    background-color: var(--section-bg-dark); /* Use the darker background for contrast */
+    color: var(--text-color);
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.certificates-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.certificate-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow certificates to wrap on smaller screens */
+}
+
+.certificate-item {
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; 
+    text-align: center;
+}
+
+.certificate-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.certificate-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.certificate-item .issuing-authority,
+.certificate-item .date-earned {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.certificate-item a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color:#6a5acd;
+    color: #f0f2f5;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.certificate-item a:hover {
+    background-color:#8a2be2;
+}

@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Potfolio" content="My potfolio webpage">
-    <title>{{title}}</title>
+//header and footer element
+const mainHeader = document.querySelector('#main-header');
+const mainFooter = document.querySelector('#footer-section');
 
-    <link rel='stylesheet' href='/stylesheets/nav.css' />
-    <link rel='stylesheet' href='/stylesheets/footer.css' />
-    <link rel='stylesheet' href='/stylesheets/homepage.css' />
-    <link rel='stylesheet' href='/stylesheets/about.css' />
-        <!-- Fontawesome -->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <!-- add google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
-
-</head>
-    <header class="navbar">
+// header
+mainHeader.innerHTML = `
+    <div class="navbar">
 
         <nav class="main-nav">
             <ul>
-                <li><a href="homepage">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="projects">Products</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Contact Me">Products</a></li>
+                <li><a href="#Contact Me">Products</a></li>
             </ul>
         </nav>
         <div class="contact-info">
@@ -33,11 +19,11 @@
                 <img src="profile01.jpg" alt="Profile Picture" class="profile-thumbnail">
         </div>
         
-    </header>
-      <body>
-    {{{body}}}
-        <footer class="footer">
-        <section class="contact-section">
+    </div>
+    `;
+
+mainFooter.innerHTML =`
+            <section class="contact-section">
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <p>"Every great journey starts with a conversation. Reach out!"</p>
@@ -58,6 +44,4 @@
                 <a href="https://github.com/prakritacharya" target="_blank">https://github.com/prakritacharya</a>
             </div>
         </section>
-</footer>
-  </body>
-</html>
+`

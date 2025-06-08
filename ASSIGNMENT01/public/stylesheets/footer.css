@@ -1,0 +1,90 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-section {
+    background-color: #8a2be2;
+    padding: 40px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    min-height: 400px; /* Ensure it takes up enough vertical space */
+}
+
+.get-in-touch {
+    flex: 1 1 300px; /* Allows it to grow and shrink, with a base of 300px */
+    max-width: 450px;
+    text-align: left;
+    padding-right: 20px;
+        color: #f0f2f5;
+}
+
+.get-in-touch h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.get-in-touch p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #f0f2f5;
+    font-size: 36px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1a1a2e;
+}
+
+.contact-card {
+    background-color: #4a4a7f;
+    border-radius: 10px;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 0 1 320px; /* Fixed width, but allows shrinking */
+    height: 180px; /* Fixed height for consistent look */
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card i {
+    font-size: 48px;
+    color: #f0f2f5;
+}
+
+.contact-card span,
+.contact-card a {
+    color: #f0f2f5;
+    font-size: 1.1em;
+    word-break: break-all; /* Ensures long emails/links wrap */
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
