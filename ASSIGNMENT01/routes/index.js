@@ -6,6 +6,10 @@ router.get('/', function(req, res) {
   res.render('homepage', { title: 'Home Page' })
 });
 
+router.get('/homepage', function(req, res) {
+  res.render('homepage', { title: 'Home Page' })
+});
+
 router.get('/about', function(req, res) {
   res.render('about', { title: 'About Me' })
 });
