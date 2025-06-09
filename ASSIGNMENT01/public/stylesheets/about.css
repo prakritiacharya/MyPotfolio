@@ -1,55 +1,54 @@
 .about-me-section {
-    background-color: #2a2a4e; /* Darker background for the section */
-    padding: 50px 0; /* Vertical padding for the whole section */
+    background-color: #404099; 
+    padding: 50px 0; 
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Align items vertically in the center */
-    min-height: calc(100vh - 60px); /* Fill remaining viewport height, accounting for navbar */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    border-top: 1px solid var(--border-color); /* Matches the border from the image */
-    border-bottom: 1px solid var(--border-color); /* Matches the border from the image */
+    justify-content: center; 
+    align-items: center; 
+    min-height: calc(100vh - 60px); 
+    flex-wrap: wrap;  
+    border-bottom: 1px solid #5a5a7f; 
 }
 
 .about-image-container {
-    width: 450px; /* Fixed width for the image container, adjust as needed */
-    height: 600px; /* Fixed height for the image container, adjust as needed */
-    overflow: hidden; /* Ensures the image is clipped to the container */
-    position: relative; /* For positioning purposes */
-    padding: 20px; /* Padding inside the container to create inner border effect */
-    background-color: var(--purple); /* Inner background color matching the image's inner border */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow for the image container */
-    margin: 20px; /* Margin to separate from content box */
-    display: flex; /* To center the image if needed */
+    width: 450px;
+    height: 600px; 
+    overflow: hidden; 
+    position: relative; 
+    padding: 20px; 
+    background-color: #302958; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    margin: 20px; 
+    display: flex; 
     justify-content: center;
     align-items: center;
-    border-radius: 5px; /* Slight roundness */
+    border-radius: 5px; 
 }
 
 .about-profile-pic {
-    width: 100%; /* Make image fill its container */
-    height: 100%; /* Make image fill its container */
-    object-fit: cover; /* Crop image to fit container */
-    display: block; /* Remove extra space below image */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
 }
 
 .about-content-container {
-    background-color: var(--content-box-bg); /* Light background for content */
-    color: var(--content-text-color); /* Dark text for readability */
+    background-color: #e0e0f2; 
+    color: #333; 
     padding: 40px;
-    width: 600px; /* Fixed width for the content box, adjust as needed */
-    min-height: 600px; /* Match height of image container for alignment */
+    width: 600px; 
+    min-height: 600px; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    margin: 20px; /* Margin to separate from image container */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Shadow for the content container */
-    border-radius: 5px; /* Slight roundness */
+    justify-content: flex-start; 
+    margin: 20px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    border-radius: 5px; 
 }
 
 .about-content-container h2 {
     font-size: 2.8em;
     margin-bottom: 25px;
-    color: var(--content-text-color);
+    color: #333;
     font-weight: 700;
 }
 
@@ -58,28 +57,28 @@
     margin-bottom: 15px;
     line-height: 1.8;
 }
-/* --- Work Experience Section --- */
+
 .work-experience-section {
-    background-color: var(--content-box-bg); /* Use the light background for consistency */
-    color: var(--content-text-color);
+    background-color: #e0e0f2; 
+    color: #333;
     padding: 50px 30px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #5a5a7f;
 }
 
 .work-experience-section h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
     text-align: center;
-    color: var(--content-text-color);
+    color: #333;
 }
 
 .experience-item {
     margin-bottom: 40px;
     padding: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #5a5a7f;
     border-radius: 5px;
-    background-color: #fff; /* White background for each item */
-    color: var(--content-text-color);
+    background-color: #fff; 
+    color: #333;
 }
 
 .experience-details h3 {
@@ -104,10 +103,9 @@
     line-height: 1.6;
 }
 
-/* --- Certificates Section --- */
 .certificates-section {
-    background-color: var(--section-bg-dark); /* Use the darker background for contrast */
-    color: var(--text-color);
+     background-color: #2a2a4e; 
+    color: #f0f2f5;
     padding: 50px 30px;
     text-align: center;
 }
@@ -121,7 +119,7 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* Allow certificates to wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
 .certificate-item {

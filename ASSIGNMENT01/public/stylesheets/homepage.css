@@ -2,29 +2,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 60px); /* Adjust based on navbar height */
+    min-height: calc(100vh - 60px); 
     padding: 20px;
 }
 .hero-contact {
     width: 100%;
-    height: 400px; /* Adjust height as needed */
-    background-image: url('/images/aboutme.jpg'); /* Replace with your image path */
+    height: 400px; 
+    background-image: url('/images/aboutme.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 10px; /* To account for fixed navbar */
+    margin-top: 10px; 
 }
 .intro {
     display: flex;
     align-items: center;
-    background-color: #3b0070; /* Slightly lighter purple for the main container */
+    background-color: #4d4da1; 
     border-radius: 15px;
     padding: 40px;
     max-width: 1050px;
     height: 410px;
     width: 90%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    gap: 55px; /* Space between text card and image placeholder */
+    gap: 55px; 
+}
+  .intro {
+    border: 3px solid rgb(158, 152, 152);
 }
 
 /* .img-intro {
@@ -36,9 +39,9 @@
 } 
 */
 .img-intro {
-    background-color: #392966;
+    background-color: #2f2f6b;
     width: 90%;
-    height: 300px;
+    height: 350px;
     padding: 40px;
     right:-70px;
     max-width: 50%;
@@ -48,29 +51,29 @@
     z-index: 1;
 }
 
-  /* Arc cutout effect using a pseudo-element */
+
  .img-intro::after {
   content: '';
   position: absolute;
-  right: -340px;
-  top: -50px;
-  width: 380px;
+  right: -335px;
+  top: -21px;
+  width: 400px;
   height: 350px;
   padding: 20px;
-  background-color: #3b0070; /* match the body bg */
+  background-color: #4d4da1; 
   border-radius: 50%;
   z-index: 3;
   }
 
   .img-intro .text {
   max-width: 100%;
-  padding-right: 68px; /* Push text away from the photo */
+  padding-right: 68px; 
  }
 
 .img-intro h1 {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #e0e0e0; /* Slightly off-white for heading */
+    color: #e0e0e0;
 }
 
 .img-intro p {
@@ -80,7 +83,7 @@
 }
 
 .connect-button {
-    background-color: #6a00ff; /* Bright purple for the button */
+    background-color: #5a00d0; /* Bright purple for the button */
     color: white;
     padding: 12px 25px;
     border: none;
@@ -91,21 +94,21 @@
 }
 
 .connect-button:hover {
-    background-color: #5a00d0;
+    background-color: #1a1324;
 }
 
 .photo {
     flex: 1;
     position: relative;
-    min-width: 340px; /* Adjust size as needed */
+    min-width: 340px; 
     max-width: 350px;
-    height: 350px; /* Adjust size as needed */
-    background-color: #2a0050; /* Placeholder color for the image circle */
+    height: 350px; 
+    background-color: #2a0050; 
     border-radius: 50%;
-    overflow: hidden; /* Ensures image stays within circle if added */
-    display: flex; /* For centering a potential image */
-    justify-content: center; /* For centering a potential image */
-    align-items: center; /* For centering a potential image */
+    overflow: hidden;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     z-index: 2;
     left: -25px;
 }

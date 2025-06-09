@@ -63,8 +63,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex: 0 1 320px; /* Fixed width, but allows shrinking */
-    height: 180px; /* Fixed height for consistent look */
+    flex: 0 1 320px; 
+    height: 180px; 
     gap: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
@@ -84,7 +84,7 @@
 .contact-card a {
     color: #f0f2f5;
     font-size: 1.1em;
-    word-break: break-all; /* Ensures long emails/links wrap */
+    word-break: break-all; 
     text-decoration: none;
 }
 
