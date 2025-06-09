@@ -1,5 +1,5 @@
 .about-me-section {
-    background-color: var(--section-bg-dark); /* Darker background for the section */
+    background-color: #2a2a4e; /* Darker background for the section */
     padding: 50px 0; /* Vertical padding for the whole section */
     display: flex;
     justify-content: center; /* Center the content horizontally */
