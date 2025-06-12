@@ -6,7 +6,9 @@
     align-items: center; 
     min-height: calc(100vh - 60px); 
     flex-wrap: wrap;  
-    border-bottom: 1px solid #5a5a7f; 
+    border-bottom: 8px solid #2f2f6b; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
 .about-image-container {
