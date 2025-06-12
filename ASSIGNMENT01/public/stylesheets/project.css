@@ -1,93 +1,111 @@
-
-.hero-section {
-    width: 100%;
-    height: 350px; /* Adjust height as needed */
-    background-image: url('aboutme.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 60px; /* To account for fixed navbar */
+.projects-section {
+  padding: 40px 20px;
+  background-color: #36244b;
+  text-align: center;
 }
 
-.contact-section {
-    background-color: #8a2be2;
-    padding: 40px 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    min-height: 400px; /* Ensure it takes up enough vertical space */
+.projects-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #f0ebeb;
 }
 
-.get-in-touch {
-    flex: 1 1 300px; /* Allows it to grow and shrink, with a base of 300px */
-    max-width: 450px;
-    text-align: left;
-    padding-right: 20px;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
 }
 
-.get-in-touch h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    font-weight: 700;
+.project-card {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.66%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.get-in-touch p {
-    font-size: 1.1em;
-    margin-bottom: 25px;
-    opacity: 0.9;
+.project-card:nth-last-child(-n+2) {
+  grid-column: span 1;
 }
 
-.social-icons {
-    display: flex;
-    gap: 20px;
+.project-card:hover {
+  transform: scale(1.02);
 }
 
-.social-icons a {
-    color: #f0f2f5;
-    font-size: 36px;
-    transition: color 0.3s ease;
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background-color: #000;
+  transition: opacity 0.5s ease;
 }
 
-.social-icons a:hover {
-    color: #1a1a2e;
+.middle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(141, 135, 172, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.contact-card {
-    background-color: #4a4a7f;
-    border-radius: 10px;
-    padding: 30px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex: 0 1 320px; 
-    height: 180px; 
-    gap: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
+.project-card:hover .middle {
+  opacity: 1;
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.project-card:hover .project-image {
+  opacity: 0.3;
 }
 
-.contact-card i {
-    font-size: 48px;
-    color: #f0f2f5;
+.project-info {
+  color: white;
+  max-width: 100%;
 }
 
-.contact-card span,
-.contact-card a {
-    color: #f0f2f5;
-    font-size: 1.1em;
-    word-break: break-all; 
-    text-decoration: none;
+.project-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
 }
 
-.contact-card a:hover {
-    text-decoration: underline;
+.project-info p {
+  margin: 0 0 15px;
+  font-size: 0.95rem;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.project-button {
+  background-color: #36244b;
+  color: white;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-button:hover {
+  background-color: #4b00c2;
+  transform: translateY(-2px);
 }
