@@ -7,7 +7,7 @@
     min-height: calc(100vh - 60px); 
     flex-wrap: wrap;  
     border-bottom: 8px solid #2f2f6b; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -16,9 +16,9 @@
     height: 600px; 
     overflow: hidden; 
     position: relative; 
-    padding: 20px; 
+    /* padding: 20px;  */
     background-color: #302958; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    box-shadow: 35px 32px 16px rgba(0, 0, 0, 0.4); 
     margin: 20px; 
     display: flex; 
     justify-content: center;
@@ -38,12 +38,14 @@
     color: #333; 
     padding: 40px;
     width: 600px; 
-    min-height: 600px; 
+    height: 570px;
+    /* min-height: 600px;  */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
-    margin: 20px; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+    margin: 15px;
+    margin-top: 80px; 
+    box-shadow: 15px 2px 20px 10px rgba(0, 0, 0, 0.4); 
     border-radius: 5px; 
 }
 

@@ -64,7 +64,7 @@
     height: 180px; 
     gap: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 15px 8px 10px rgba(#060C1D, 0.4);
 }
 
 .contact-card:hover {
