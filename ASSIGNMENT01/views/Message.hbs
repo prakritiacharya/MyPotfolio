@@ -1,0 +1,23 @@
+<body>
+
+  <h1>Contact Me</h1>
+
+  <form   action="https://formspree.io/f/xanjogyy" method="POST">
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="phone">Your Phone Number:</label>
+    <input type="tel" name="phone" id="phone">
+
+    <label for="message">Your Message / Project Idea:</label>
+    <textarea name="message" id="message" rows="6" required></textarea>
+
+    <!-- Optional redirect after submission -->
+    <input type="hidden" name="_redirect" value="thankyou.html">
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p class="note">We'll respond to your message soon. Thank you!</p>
+
+</body>
