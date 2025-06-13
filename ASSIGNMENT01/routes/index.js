@@ -26,9 +26,9 @@ router.get('/Message', (req, res) => {
   res.render('Message', { layout: false }); // hide layout
 });
 
-router.get('/thankyou', (req, res) => {
-  res.render('thankyou', { layout: false });//same
-});
+// router.get('/thankyou', (req, res) => {
+//   res.render('thankyou', { layout: false });//same
+// });
 
 
 module.exports = router;
