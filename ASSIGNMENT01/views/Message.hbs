@@ -1,23 +1,20 @@
-<body>
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="hidden" name="_redirect" value="thankyou.hbs">
+      <h2>Contact Me</h2>
 
-  <h1>Contact Me</h1>
+      <label for="email">Your Email:</label>
+      <input type="email" name="email" required>
 
-  <form   action="https://formspree.io/f/xanjogyy" method="POST">
-    <label for="email">Your Email:</label>
-    <input type="email" name="email" id="email" required>
+      <label for="phone">Your Phone Number:</label>
+      <input type="tel" name="phone">
 
-    <label for="phone">Your Phone Number:</label>
-    <input type="tel" name="phone" id="phone">
+      <label for="message">Message / Project Idea:</label>
+      <textarea name="message" rows="5" required></textarea>
 
-    <label for="message">Your Message / Project Idea:</label>
-    <textarea name="message" id="message" rows="6" required></textarea>
-
-    <!-- Optional redirect after submission -->
-    <input type="hidden" name="_redirect" value="thankyou.html">
-
-    <button type="submit">Send Message</button>
-  </form>
-
-  <p class="note">We'll respond to your message soon. Thank you!</p>
-
-</body>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
