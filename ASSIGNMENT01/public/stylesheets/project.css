@@ -5,7 +5,13 @@
 }
 
 .projects-container h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #f0ebeb;
+}
+
+.projects-container h3 {
+  font-size: 1rem;
   margin-bottom: 30px;
   color: #f0ebeb;
 }
