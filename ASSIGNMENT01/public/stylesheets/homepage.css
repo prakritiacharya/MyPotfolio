@@ -14,11 +14,11 @@
     border-radius: 15px;
     padding: 20px;
     max-width: 1300px;
-    height: 500px;
+    height: 600px;
     width: 90%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
-    gap: 45px; 
+    gap: 5px; 
 }
   /* .intro, .img-intro, .photo, .hero-section {
     border: 3px solid rgb(134, 14, 14);
@@ -38,11 +38,11 @@
 .img-intro {
     background-color: #2f2f6b;
     width: 100%;
-    height: 370px;
-    padding: 20px;
+    height: 480px;
+    padding: 40px;
     padding-right: 70px;
-    right: -90px;
-    max-width: 60%;
+    right: -30px;
+    max-width: 65%;
     position: relative;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -54,10 +54,10 @@
  .img-intro::after {
   content: '';
   position: absolute;
-  right: -320px;
-  top: -18px;
-  width: 400px;
-  height: 360px;
+  right: -300px;
+  top: -23px;
+  width: 380px;
+  height: 480px;
   padding: 20px;
   background-color: #4d4da1; 
   border-radius: 50%;
@@ -105,9 +105,9 @@
 .photo {
     flex: 1;
     position: relative;
-    min-width: 340px; 
-    max-width: 350px;
-    height: 350px; 
+    min-width: 430px; 
+    /* max-width: 350px; */
+    height: 430px; 
     background-color: #2a0050; 
     border-radius: 50%;
     overflow: hidden;
@@ -115,7 +115,7 @@
     justify-content: center; 
     align-items: center; 
     z-index: 2;
-    left: 5px;
+    left: -40px;
 }
   .photo img  {
     width: 100%;
