@@ -10,7 +10,7 @@
 ui ux design - [figma](https://www.figma.com/design/GGJ8GpUJpxR28rliCaJLtW/Potfolio?t=WHyraPLwcbWySkCZ-1) 
 
 ## Live Site  
-[https://comp2068jsframeworks-0abb.onrender.com](https://comp2068jsframeworks-0abb.onrender.com)
+[Prakriti Acharya Potfolio](https://comp2068jsframeworks-0abb.onrender.com)
 
 ## Project Description
 This project is a **Personal Portfolio website** built using **Node.js** and **Express**. The site consist of four pages i.e. Home, About Me, Projects, and a Contact Me with only one route object - index.js. And, the layout.hbs is a file with shared header and footer( includes social icons including github and linkdIn profiles). I also added message.hbs which is not fully functional, and was not asked in the assignment instruction. It simply send message to my email if someone would like to contact to me. but the thank you message after that is yet to be structured.
