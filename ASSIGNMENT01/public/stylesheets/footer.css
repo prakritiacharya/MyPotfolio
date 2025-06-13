@@ -87,3 +87,12 @@
 .contact-card a:hover {
     text-decoration: underline;
 }
+
+.copyright {
+  width: 100%;            
+  text-align: center;     
+  margin-top: 30px;
+  font-size: 14px;
+  color: #f5f1f1;
+  order: 2;              
+}
