@@ -25,6 +25,7 @@ For card and image over slide/fade, buttons, contact form ideas - [w3school](htt
 Icons-https://fontawesome.com/search
 color theme-https://color.adobe.com/create/color-wheel
 ui ux design - [figma](https://www.figma.com/design/GGJ8GpUJpxR28rliCaJLtW/Potfolio?t=WHyraPLwcbWySkCZ-1)
+For email direct message - https://formspree.io/
 
 
 
