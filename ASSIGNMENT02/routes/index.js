@@ -10,5 +10,10 @@ router.get('/', function(req, res, next) {
   res.render('expenses', { title: 'Express' });
 });
 
+router.get('/add', (req, res) => {
+  res.render('add'); 
+});
+
+
 
 module.exports = router;
