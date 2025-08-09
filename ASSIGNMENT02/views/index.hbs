@@ -1,5 +1,42 @@
-<div class="hero-text">
-  <h1>Track Your Spending</h1>
-  <p class="lead">A simple and effective way to manage your expenses.</p>
-  <a href="/expenses" class="btn1">Get Started</a>
+<div>
+  <h1>Welcome to Your Expense Tracker</h1>
+  <p>Easily manage your expenses and stay on top of your budget.</p>
+  <a href="/add">Add New Expense</a>
 </div>
+
+<div>
+  <div>
+    <h3>Total Expenses</h3>
+    <p>${{totalExpenses}}</p>
+  </div>
+  <div>
+    <h3>This Month</h3>
+    <p>${{monthlyExpenses}}</p>
+  </div>
+  <div>
+    <h3>Categories</h3>
+    <p>{{categoriesCount}}</p>
+  </div>
+</div>
+
+<h3>Recent Expenses</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each recentExpenses}}
+      <tr>
+        <td>{{this.date}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.category}}</td>
+        <td>${{this.amount}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
