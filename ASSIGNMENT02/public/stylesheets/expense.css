@@ -1,0 +1,91 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.table thead {
+  background-color: #f3f4f6;
+}
+
+.table th {
+  padding: 14px;
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafc;
+  transition: background 0.3s ease;
+}
+
+/* Buttons */
+.btn-warning,
+.btn-danger {
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+}
+
+.btn-warning:hover {
+  background-color: #ec971f;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+
+.btn-danger:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
+/* No expenses text */
+p {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+}
+
+p a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
