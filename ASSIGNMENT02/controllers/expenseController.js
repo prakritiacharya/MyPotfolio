@@ -1,60 +1,37 @@
-// controllers/expenseController.js-  chatgpt, text
+const Expense = require('../models/Expense');
 
-// Temporary in-memory "database"
-let expenses = [
-  { _id: 1, date: '2025-08-01', category: 'Food', description: 'Lunch', amount: 12.5 },
-  { _id: 2, date: '2025-08-05', category: 'Transport', description: 'Bus ticket', amount: 3.25 }
-];
+// Home page data
+exports.getDashboard = async (req, res) => {
+  try {
+    // All expenses
+    const expenses = await Expense.find();
 
-// Show all expenses
-exports.getAllExpenses = (req, res) => {
-  res.render('expenses', { expenses });
-};
+    // Total expenses
+    const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
 
-// Show add form
-exports.getAddForm = (req, res) => {
-  res.render('add');
-};
+    // This month's expenses
+    const currentMonth = new Date().getMonth();
+    const monthlyExpenses = expenses
+      .filter(e => new Date(e.date).getMonth() === currentMonth)
+      .reduce((sum, e) => sum + e.amount, 0);
 
-// Handle add form
-exports.postAddExpense = (req, res) => {
-  const { date, category, description, amount } = req.body;
-  expenses.push({ _id: expenses.length + 1, date, category, description, amount });
-  res.redirect('/expenses');
-};
+    // Unique categories
+    const categoriesCount = new Set(expenses.map(e => e.category)).size;
 
-// Show edit form
-exports.getEditForm = (req, res) => {
-  const expense = expenses.find(e => e._id == req.params.id);
-  res.render('edit', { expense });
-};
+    // Recent 5 expenses (sorted newest first)
+    const recentExpenses = await Expense.find()
+      .sort({ date: -1 })
+      .limit(5);
 
-// Handle edit form
-exports.postEditExpense = (req, res) => {
-  const expense = expenses.find(e => e._id == req.params.id);
-  if (expense) {
-    expense.date = req.body.date;
-    expense.category = req.body.category;
-    expense.description = req.body.description;
-    expense.amount = req.body.amount;
+    res.render('index', {
+      title: 'Home',
+      totalExpenses: totalExpenses.toFixed(2),
+      monthlyExpenses: monthlyExpenses.toFixed(2),
+      categoriesCount,
+      recentExpenses
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
   }
-  res.redirect('/expenses');
-};
-
-// Show delete confirmation
-exports.getDeleteConfirm = (req, res) => {
-  const expense = expenses.find(e => e._id == req.params.id);
-  res.render('delete', { expense });
-};
-
-// Handle delete
-exports.postDeleteExpense = (req, res) => {
-  expenses = expenses.filter(e => e._id != req.params.id);
-  res.redirect('/expenses');
-};
-
-// View single expense
-exports.getSingleExpense = (req, res) => {
-  const expense = expenses.find(e => e._id == req.params.id);
-  res.render('view', { expense });
 };
