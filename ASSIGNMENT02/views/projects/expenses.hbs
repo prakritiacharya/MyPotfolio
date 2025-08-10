@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<a href="/expenses/add">Add Expense</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th><th>Category</th><th>Description</th><th>Amount</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each dataset}}
+      <tr>
+        <td>{{this.date}}</td>
+        <td>{{this.category}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.amount}}</td>
+        <td>
+          <a href="/expenses/edit/{{this._id}}">Edit</a> |
+          <a href="/expenses/delete/{{this._id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

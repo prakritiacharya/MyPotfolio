@@ -1,17 +1,18 @@
-body, html {
+/* ==== General Page Background & Text ==== */
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #312f2f; /* pure black to match add.hbs theme */
+  color: #f0f0f0; /* light text for contrast */
 }
 
-
+/* ==== Header ==== */
 .bg {
-  background-color: #343a40; 
+  background-color: #1e1e1e; /* same dark tone as inputs in add.css */
   padding: 15px 0;
+  box-shadow: 0 0 10px #e0a80077; /* subtle gold glow */
 }
-
 
 .header {
   max-width: 1100px;
@@ -22,69 +23,57 @@ body, html {
   align-items: center;
 }
 
-
 .header h2 {
-  color: #ffffff;
+  color: #e0a800; /* gold title to match button focus highlight */
   font-weight: 600;
   margin: 0;
 }
 
-
+/* ==== Navigation Buttons ==== */
 nav a {
   text-decoration: none;
   font-weight: 500;
   padding: 8px 16px;
   margin-left: 10px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  color: #adb5bd; 
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: #f0f0f0;
+  border: 1px solid #e0a800;
 }
 
-
-.btn1 {
-  background-color: transparent;
-  color: #f8f9fa;
-  border: 1.5px solid #f8f9fa;
+/* Hover with gold highlight */
+nav a:hover {
+  background-color: #e0a800;
+  color: #1a1a1a;
 }
 
-.btn2 {
-  background-color: transparent;
-  color: #f8f9fa;
-  border: 1.5px solid #f8f9fa;
-}
-
+/* Special button for active / primary */
 .btn3 {
-  background-color: #0d6efd; 
-  color: white;
-  border: 1.5px solid #0d6efd;
-}
-
-
-.btn1:hover,
-.btn2:hover {
-  background-color: #f8f9fa;
-  color: #343a40;
-  border-color: #f8f9fa;
+  background-color: #e0a800;
+  color: #1a1a1a;
+  border: 1px solid #e0a800;
 }
 
 .btn3:hover {
-  background-color: #0b5ed7; 
-  border-color: #0b5ed7;
+  background-color: #c69500;
+  border-color: #c69500;
 }
 
-
+/* ==== Main Content Area ==== */
 main.container {
   max-width: 1100px;
   margin: 20px auto 40px auto;
   padding: 0 20px;
+  background-color: transparent; /* show black body background */
 }
 
-
+/* ==== Footer ==== */
 .footer1 {
-  background-color: #343a40;
+  background-color: #1e1e1e;
   padding: 15px 0;
-  color: #adb5bd;
+  color: #aaa;
   font-size: 0.9rem;
+  border-top: 1px solid #333;
 }
 
 .footer2 {

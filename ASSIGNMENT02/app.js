@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var expenseRoutes = require('./routes/expenses');
 
+var configs = require("./configs/globals");
+var mongoose=require("mongoose");
+const { config } = require('process');
+
 var app = express();
 
 // view engine setup
@@ -22,7 +26,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/projects', expenseRoutes);
 app.use('/expenses', expenseRoutes);
+
+mongoose.connect(configs.ConnectionStrings.MongoDB)
+  .then(() => console.log("Successfully connected"))
+  .catch((err) => console.log("Connection error:", err));
+
 
 
 // catch 404 and forward to error handler
