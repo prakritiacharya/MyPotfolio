@@ -1,22 +1,16 @@
-const mongoose = require('mongoose');
 
-const expenseSchema = new mongoose.Schema({
-  date: {
-    type: Date,
-    required: true
-  },
-  category: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  amount: {
-    type: Number,
-    required: true
-  }
+// Import mongoose, then destructure Schema and model
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
+
+//  data schema object
+const expenseSchema = Schema({
+    date: { type: Date, required: true },
+    category: { type: String, required: true }, 
+    description: { type: String, required: true },
+    amount: { type: Number, required: true, min: 0 },
+  
 });
 
-module.exports = mongoose.model('Expense', expenseSchema);
+// Create and export the model
+module.exports = model("Expense", expenseSchema);

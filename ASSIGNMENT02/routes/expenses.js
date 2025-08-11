@@ -1,24 +1,87 @@
-const express = require('express');
+// routes/expenses.js
+const express = require("express");
 const router = express.Router();
 
-const expenseController = require('../controllers/expenseController');
+// Import mongoose model to be used
+const Expense = require("../models/Expense");
 
-// List all expenses
-router.get('/', expenseController.getAllExpenses);
+// GET /expenses/
+// List all expenses sorted by date (most recent first)
+router.get("/", async (req, res, next) => {
+  try {
+    let expenses = await Expense.find().sort([["date", "descending"]]);
+    res.render("projects/expenses", {
+      title: "Expense Tracker",
+      dataset: expenses
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 
-// Show add expense form
-router.get('/add', expenseController.getAddForm);
-router.post('/add', expenseController.postAddExpense);
+// GET /expenses/add
+router.get("/add", (req, res, next) => {
+  res.render("projects/add", { title: "Add a New Expense" });
+});
 
-// Show edit form
-router.get('/edit/:id', expenseController.getEditForm);
-router.post('/edit/:id', expenseController.postEditExpense);
+// POST /expenses/add
+router.post("/add", async (req, res, next) => {
+  try {
+    let newExpense = new Expense({
+      date: req.body.date,
+      category: req.body.category,
+      description: req.body.description,
+      amount: req.body.amount
+    });
+    await newExpense.save();
+    res.redirect("/expenses");
+  } catch (err) {
+    next(err);
+  }
+});
 
-// Show delete confirmation
-router.get('/delete/:id', expenseController.getDeleteConfirm);
-router.post('/delete/:id', expenseController.postDeleteExpense);
+// GET /expenses/delete/:_id
+router.get("/delete/:_id", async (req, res, next) => {
+  try {
+    let expenseId = req.params._id;
+    await Expense.findByIdAndDelete(expenseId);
+    res.redirect("/expenses");
+  } catch (err) {
+    next(err);
+  }
+});
 
-// View single expense
-router.get('/view/:id', expenseController.getSingleExpense);
+// GET /expenses/edit/:_id
+router.get("/edit/:_id", async (req, res, next) => {
+  try {
+    let expenseId = req.params._id;
+    let expenseData = await Expense.findById(expenseId);
+    res.render("projects/edit", {
+      title: "Edit Expense",
+      expense: expenseData
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// POST /expenses/edit/:_id
+router.post("/edit/:_id", async (req, res, next) => {
+  try {
+    let expenseId = req.params._id;
+    await Expense.findByIdAndUpdate(
+      { _id: expenseId },
+      {
+        date: req.body.date,
+        category: req.body.category,
+        description: req.body.description,
+        amount: req.body.amount
+      }
+    );
+    res.redirect("/expenses");
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;
