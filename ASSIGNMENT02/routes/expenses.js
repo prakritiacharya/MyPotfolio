@@ -1,18 +1,19 @@
 // routes/expenses.js
 const express = require("express");
 const router = express.Router();
-
 // Import mongoose model to be used
 const Expense = require("../models/Expense");
+const isAuthenticated = require("../Authentication/authenticate");
 
 // GET /expenses/
 // List all expenses sorted by date (most recent first)
-router.get("/", async (req, res, next) => {
+router.get("/",isAuthenticated , async (req, res, next) => {
   try {
     let expenses = await Expense.find().sort([["date", "descending"]]);
     res.render("projects/expenses", {
       title: "Expense Tracker",
-      dataset: expenses
+      dataset: expenses,
+      user:req.user
     });
   } catch (err) {
     next(err);
@@ -20,12 +21,15 @@ router.get("/", async (req, res, next) => {
 });
 
 // GET /expenses/add
-router.get("/add", (req, res, next) => {
-  res.render("projects/add", { title: "Add a New Expense" });
+router.get("/add",isAuthenticated , (req, res, next) => {
+  res.render("projects/add", { 
+    title: "Add a New Expense", 
+    user: req.user
+   });
 });
 
 // POST /expenses/add
-router.post("/add", async (req, res, next) => {
+router.post("/add",isAuthenticated , async (req, res, next) => {
   try {
     let newExpense = new Expense({
       date: req.body.date,
@@ -41,7 +45,7 @@ router.post("/add", async (req, res, next) => {
 });
 
 // GET /expenses/delete/:_id
-router.get("/delete/:_id", async (req, res, next) => {
+router.get("/delete/:_id",isAuthenticated , async (req, res, next) => {
   try {
     let expenseId = req.params._id;
     await Expense.findByIdAndDelete(expenseId);
@@ -52,13 +56,14 @@ router.get("/delete/:_id", async (req, res, next) => {
 });
 
 // GET /expenses/edit/:_id
-router.get("/edit/:_id", async (req, res, next) => {
+router.get("/edit/:_id",isAuthenticated , async (req, res, next) => {
   try {
     let expenseId = req.params._id;
     let expenseData = await Expense.findById(expenseId);
     res.render("projects/edit", {
       title: "Edit Expense",
-      expense: expenseData
+      expense: expenseData,
+      user: req.user
     });
   } catch (err) {
     next(err);
@@ -66,7 +71,7 @@ router.get("/edit/:_id", async (req, res, next) => {
 });
 
 // POST /expenses/edit/:_id
-router.post("/edit/:_id", async (req, res, next) => {
+router.post("/edit/:_id",isAuthenticated , async (req, res, next) => {
   try {
     let expenseId = req.params._id;
     await Expense.findByIdAndUpdate(

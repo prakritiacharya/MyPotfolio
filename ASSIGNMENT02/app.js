@@ -50,7 +50,7 @@ passport.deserializeUser(User.deserializeUser()); // Deserialize user instance f
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 app.use('/projects', expenseRoutes);
 app.use('/expenses', expenseRoutes);
 

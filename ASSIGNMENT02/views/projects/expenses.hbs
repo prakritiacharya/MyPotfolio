@@ -16,8 +16,10 @@
         <td>{{this.description}}</td>
         <td>{{this.amount}}</td>
         <td>
+         {{#if ../user}}
           <a href="/expenses/edit/{{this._id}}">Edit</a> |
           <a href="/expenses/delete/{{this._id}}" onclick="return confirm('Are you sure?')">Delete</a>
+        {{/if}}
         </td>
       </tr>
     {{/each}}

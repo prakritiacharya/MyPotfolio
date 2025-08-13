@@ -1,34 +1,48 @@
 const express = require('express');
 const router = express.Router();
 const Expense = require('../models/Expense'); // your mongoose model
+const Users = require("../models/user");
+
 var passport = require("passport");
 
 router.get('/', async (req, res) => {
   try {
-    // 1. All expenses to calculate totals
-    const allExpenses = await Expense.find({}).lean();
+    if (!req.user) {
+      // If not logged in, redirect to login
+      return res.render('index', {
+        title: 'Welcome',
+        user: null
+      });
+    }
+
+    // If logged in, calculate and show dashboard data
+
+    //  All expenses to calculate totals
+    const allExpenses = await Expense.find({ user: req.user._id }).lean(); // only user's expenses
 
     // Total expenses
     const totalExpenses = allExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
 
-    // 2. This month’s expenses
+    //  This month’s expenses
     const now = new Date();
     const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1); // 1st day this month
     
-    const monthlyData = await Expense.find({ date: { $gte: startOfMonth } }).lean();
+    const monthlyData = await Expense.find({
+      user: req.user._id,
+      date: { $gte: startOfMonth }
+    }).lean();
     const monthlyExpenses = monthlyData.reduce((sum, e) => sum + (e.amount || 0), 0);
 
     // Count of categories
     const categoriesCount = new Set(allExpenses.map(e => e.category)).size;
 
     // Recent 5 expenses / DESC
-    const recentExpenses = (await Expense.find({})
+    const recentExpenses = (await Expense.find({ user: req.user._id })
       .sort({ date: -1 })
       .limit(5)
       .lean())
       .map(e => ({
         ...e,
-        // Format date in "DD Mon YYYY" 
         date: new Date(e.date).toLocaleDateString('en-US', {
           day: '2-digit',
           month: 'short',
@@ -36,13 +50,14 @@ router.get('/', async (req, res) => {
         })
       }));
 
-    // Send data to Handlebars
+    // Render dashboard with user data
     res.render('index', {
       title: 'Dashboard',
       totalExpenses: totalExpenses.toFixed(2),
       monthlyExpenses: monthlyExpenses.toFixed(2),
       categoriesCount,
-      recentExpenses
+      recentExpenses,
+      user: req.user
     });
 
   } catch (err) {
@@ -53,7 +68,14 @@ router.get('/', async (req, res) => {
 
 // GET /login
 router.get("/login", function (req, res, next) {
-  res.render("login", { title: "Login" });
+  if (req.user){
+    res.redirect("/projects");
+  }
+  res.render("login", { 
+    title: "Login",
+    user: req.user
+   });
+
 });
 
 // POST /login
@@ -70,15 +92,22 @@ router.post("/login", passport.authenticate(
 
 // GET /register
 router.get("/register", function (req, res, next) {
-  res.render("register", { title: "Register" });
+    if (req.user){
+    res.redirect("/projects");
+  }
+  res.render("register", { 
+    title: "Register",
+    user: req.user
+
+   });
 });
 
 // POST /register
 router.post("/register", function (req, res, next) {
   // Create a new user based on input from the form
   // Call the User model and pass three parameters: user data, password, and callback
-  User.register(
-    new User({ username: req.body.username }), // new user data
+  Users.register(
+    new Users({ username: req.body.username }), // new user data
     req.body.password, // password from the form
     function (error, newUser) {
       if (error) {
@@ -93,6 +122,11 @@ router.post("/register", function (req, res, next) {
     }
   );
 });
-
+// GET /logout
+router.get("/logout", (req, res, next) => {
+  req.logout((err) => {
+    res.redirect("/login");
+  });
+});
 
 module.exports = router;
