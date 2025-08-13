@@ -1,17 +1,16 @@
-/* ==== General Page Background & Text ==== */
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #312f2f; /* pure black to match add.hbs theme */
-  color: #f0f0f0; /* light text for contrast */
+  background-color: #312f2f; 
+  color: #f0f0f0; 
 }
 
-/* ==== Header ==== */
+
 .bg {
-  background-color: #1e1e1e; /* same dark tone as inputs in add.css */
+  background-color: #1e1e1e; 
   padding: 15px 0;
-  box-shadow: 0 0 10px #e0a80077; /* subtle gold glow */
+  box-shadow: 0 0 10px #e0a80077; 
 }
 
 .header {
@@ -24,12 +23,12 @@ html, body {
 }
 
 .header h2 {
-  color: #e0a800; /* gold title to match button focus highlight */
+  color: #e0a800; 
   font-weight: 600;
   margin: 0;
 }
 
-/* ==== Navigation Buttons ==== */
+
 nav a {
   text-decoration: none;
   font-weight: 500;
@@ -41,13 +40,13 @@ nav a {
   border: 1px solid #e0a800;
 }
 
-/* Hover with gold highlight */
+
 nav a:hover {
   background-color: #e0a800;
   color: #1a1a1a;
 }
 
-/* Special button for active / primary */
+
 .btn3 {
   background-color: #e0a800;
   color: #1a1a1a;
@@ -59,15 +58,26 @@ nav a:hover {
   border-color: #c69500;
 }
 
-/* ==== Main Content Area ==== */
+.login a {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: #f0f0f0;
+  border: 1px solid #e0a800;
+}
+
+
 main.container {
   max-width: 1100px;
   margin: 20px auto 40px auto;
   padding: 0 20px;
-  background-color: transparent; /* show black body background */
+  background-color: transparent;
 }
 
-/* ==== Footer ==== */
+
 .footer1 {
   background-color: #1e1e1e;
   padding: 15px 0;
