@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Expense = require('../models/Expense'); // your mongoose model
 const Users = require("../models/user");
+const isAuthenticated = require("../Authentication/authenticate");
 
 const passport = require("passport");
 
-router.get('/', async (req, res) => {
+router.get('/',isAuthenticated , async (req, res) => {
   try {
     // 1. All expenses to calculate totals
     const allExpenses = await Expense.find({}).lean();
@@ -44,7 +45,8 @@ router.get('/', async (req, res) => {
       totalExpenses: totalExpenses.toFixed(2),
       monthlyExpenses: monthlyExpenses.toFixed(2),
       categoriesCount,
-      recentExpenses
+      recentExpenses,
+      user: req.user
     });
 
   } catch (err) {
