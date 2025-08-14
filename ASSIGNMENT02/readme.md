@@ -1,4 +1,4 @@
-# My Potfolio Project
+# My Expense Tracker Project
 
 ## Student: Prakriti Acharya  
 **Course**: COMP 2068  
