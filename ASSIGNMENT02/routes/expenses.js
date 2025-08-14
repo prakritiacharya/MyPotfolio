@@ -7,7 +7,7 @@ const isAuthenticated = require("../Authentication/authenticate");
 
 // GET /expenses/
 // List all expenses sorted by date (most recent first)
-router.get("/",isAuthenticated , async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     let expenses = await Expense.find().sort([["date", "descending"]]);
     res.render("projects/expenses", {

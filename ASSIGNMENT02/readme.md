@@ -8,7 +8,7 @@
 
 
 ## Live Site  
-[Prakriti Acharya Potfolio](https://expensetracker-y7yq.onrender.com/)
+[Expense Tracker Live Site](https://expensetracker-y7yq.onrender.com/)
 
 ## Project Description
 This project is a **Expense Tracker** built using **Node.js** and **Express**. The site consist of four pages i.e. home, expense, add expense, login and a register, with only two route object - index.js and expense.js. And, the layout.hbs is a file with shared header and footer. you can register and login to your account where you can add your expenses, edit and also delete it and keep track of it.
