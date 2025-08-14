@@ -1,0 +1,173 @@
+.about-me-section {
+    background-color: #404099; 
+    padding: 50px 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: calc(100vh - 60px); 
+    flex-wrap: wrap;  
+    border-bottom: 18px solid #2f2f6b; 
+    border-right: 12px solid #2f2f6b;
+    border-left: 12px solid #2f2f6b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 15px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+.about-image-container {
+    width: 450px;
+    height: 600px; 
+    overflow: hidden; 
+    position: relative; 
+    /* padding: 20px;  */
+    background-color: #302958; 
+    box-shadow: 35px 32px 16px rgba(0, 0, 0, 0.5); 
+    margin: 20px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; 
+}
+
+.about-profile-pic {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.about-content-container {
+    background-color: #e0e0f2; 
+    color: #333; 
+    padding: 30px;
+    width: 600px; 
+    height: 570px;
+    /* min-height: 600px;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    margin: 15px;
+    margin-top: 80px; 
+    box-shadow: 15px 2px 20px 10px rgba(0, 0, 0, 0.6); 
+    border-radius: 5px; 
+}
+
+.about-content-container h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 700;
+}
+
+.about-content-container p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.work-experience-section {
+    background-color: #e0e0f2; 
+    color: #333;
+    padding: 50px 30px;
+    border-bottom: 1px solid #5a5a7f;
+}
+
+.work-experience-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.experience-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #5a5a7f;
+    border-radius: 5px;
+    background-color: #fff; 
+    color: #333;
+}
+
+.experience-details h3 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.experience-details .company,
+.experience-details .duration {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.job-responsibilities {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+.job-responsibilities li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.certificates-section {
+     background-color: #2a2a4e; 
+    color: #f0f2f5;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.certificates-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.certificate-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; 
+}
+
+.certificate-item {
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; 
+    text-align: center;
+}
+
+.certificate-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.certificate-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.certificate-item .issuing-authority,
+.certificate-item .date-earned {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.certificate-item a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color:#6a5acd;
+    color: #f0f2f5;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.certificate-item a:hover {
+    background-color:#8a2be2;
+}
