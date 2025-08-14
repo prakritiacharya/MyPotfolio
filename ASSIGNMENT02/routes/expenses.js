@@ -13,7 +13,7 @@ router.get("/",isAuthenticated , async (req, res, next) => {
     res.render("projects/expenses", {
       title: "Expense Tracker",
       dataset: expenses,
-      user:req.user
+      user: req.user,
     });
   } catch (err) {
     next(err);
@@ -24,7 +24,7 @@ router.get("/",isAuthenticated , async (req, res, next) => {
 router.get("/add",isAuthenticated , (req, res, next) => {
   res.render("projects/add", { 
     title: "Add a New Expense", 
-    user: req.user
+    user: req.user,
    });
 });
 
@@ -35,7 +35,7 @@ router.post("/add",isAuthenticated , async (req, res, next) => {
       date: req.body.date,
       category: req.body.category,
       description: req.body.description,
-      amount: req.body.amount
+      amount: req.body.amount,
     });
     await newExpense.save();
     res.redirect("/expenses");
@@ -63,7 +63,7 @@ router.get("/edit/:_id",isAuthenticated , async (req, res, next) => {
     res.render("projects/edit", {
       title: "Edit Expense",
       expense: expenseData,
-      user: req.user
+      user: req.user,
     });
   } catch (err) {
     next(err);
@@ -74,8 +74,7 @@ router.get("/edit/:_id",isAuthenticated , async (req, res, next) => {
 router.post("/edit/:_id",isAuthenticated , async (req, res, next) => {
   try {
     let expenseId = req.params._id;
-    await Expense.findByIdAndUpdate(
-      { _id: expenseId },
+    await Expense.findByIdAndUpdate(expenseId,
       {
         date: req.body.date,
         category: req.body.category,

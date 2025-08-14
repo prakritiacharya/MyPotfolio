@@ -12,8 +12,10 @@ var configs = require("./configs/globals");
 var mongoose=require("mongoose");
 const { config } = require('process');
 
+// HBS Helper Methods
+var hbs = require("hbs");
 
-// import passort and session modules
+// import passport and session modules
 var session = require("express-session");
 var passport = require("passport");
 // Import User model so we can configure passport with the plm functionality

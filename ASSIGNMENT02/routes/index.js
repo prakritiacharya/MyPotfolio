@@ -3,7 +3,7 @@ const router = express.Router();
 const Expense = require('../models/Expense'); // your mongoose model
 const Users = require("../models/user");
 
-var passport = require("passport");
+const passport = require("passport");
 
 router.get('/', async (req, res) => {
   try {
@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
       // If not logged in, redirect to login
       return res.render('index', {
         title: 'Welcome',
-        user: null
+        user: null,
+        user: req.user,
       });
     }
 
@@ -73,7 +74,7 @@ router.get("/login", function (req, res, next) {
   }
   res.render("login", { 
     title: "Login",
-    user: req.user
+    user: req.user,
    });
 
 });
@@ -97,7 +98,7 @@ router.get("/register", function (req, res, next) {
   }
   res.render("register", { 
     title: "Register",
-    user: req.user
+    user: req.user,
 
    });
 });

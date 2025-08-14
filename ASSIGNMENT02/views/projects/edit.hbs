@@ -1,6 +1,6 @@
 <h3 class="title">Edit Expense</h3>
 
-<form action="/edit/{{expense._id}}" method="POST" class="form">
+<form action="/expenses/edit/{{expense._id}}" method="POST" class="form">
   <div class="date">
     <label for="date" class="form-label">Date</label>
     <input type="date" name="date" class="form-control" value="{{expense.date}}" required />
