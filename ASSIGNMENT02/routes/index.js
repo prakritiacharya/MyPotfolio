@@ -7,43 +7,30 @@ const passport = require("passport");
 
 router.get('/', async (req, res) => {
   try {
-    if (!req.user) {
-      // If not logged in, redirect to login
-      return res.render('index', {
-        title: 'Welcome',
-        user: null,
-        user: req.user,
-      });
-    }
-
-    // If logged in, calculate and show dashboard data
-
-    //  All expenses to calculate totals
-    const allExpenses = await Expense.find({ user: req.user._id }).lean(); // only user's expenses
+    // 1. All expenses to calculate totals
+    const allExpenses = await Expense.find({}).lean();
 
     // Total expenses
     const totalExpenses = allExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
 
-    //  This month’s expenses
+    // 2. This month’s expenses
     const now = new Date();
     const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1); // 1st day this month
     
-    const monthlyData = await Expense.find({
-      user: req.user._id,
-      date: { $gte: startOfMonth }
-    }).lean();
+    const monthlyData = await Expense.find({ date: { $gte: startOfMonth } }).lean();
     const monthlyExpenses = monthlyData.reduce((sum, e) => sum + (e.amount || 0), 0);
 
     // Count of categories
     const categoriesCount = new Set(allExpenses.map(e => e.category)).size;
 
     // Recent 5 expenses / DESC
-    const recentExpenses = (await Expense.find({ user: req.user._id })
+    const recentExpenses = (await Expense.find({})
       .sort({ date: -1 })
       .limit(5)
       .lean())
       .map(e => ({
         ...e,
+        // Format date in "DD Mon YYYY" 
         date: new Date(e.date).toLocaleDateString('en-US', {
           day: '2-digit',
           month: 'short',
@@ -51,14 +38,13 @@ router.get('/', async (req, res) => {
         })
       }));
 
-    // Render dashboard with user data
+    // Send data to Handlebars
     res.render('index', {
       title: 'Dashboard',
       totalExpenses: totalExpenses.toFixed(2),
       monthlyExpenses: monthlyExpenses.toFixed(2),
       categoriesCount,
-      recentExpenses,
-      user: req.user
+      recentExpenses
     });
 
   } catch (err) {
